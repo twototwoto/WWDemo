@@ -65,6 +65,7 @@
 		8F57027C1F3AA4AE0047A5D5 /* WWDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WWDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F5702801F3AA4AE0047A5D5 /* WWDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WWDemoUITests.m; sourceTree = "<group>"; };
 		8F5702821F3AA4AE0047A5D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F57028E1F3AFC050047A5D5 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				8F5702591F3AA4AE0047A5D5 /* main.m */,
+				8F57028E1F3AFC050047A5D5 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -618,6 +620,7 @@
 			baseConfigurationReference = 6DBED537A4D7FFB829EDBEE4 /* Pods-WWDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WWDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = WWDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ITCoderW.WWDemo;
@@ -630,6 +633,7 @@
 			baseConfigurationReference = 48A4E2122213D8F82D0B5152 /* Pods-WWDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WWDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = WWDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ITCoderW.WWDemo;
@@ -706,6 +710,7 @@
 				8F5702871F3AA4AE0047A5D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8F5702881F3AA4AE0047A5D5 /* Build configuration list for PBXNativeTarget "WWDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -714,6 +719,7 @@
 				8F57028A1F3AA4AE0047A5D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8F57028B1F3AA4AE0047A5D5 /* Build configuration list for PBXNativeTarget "WWDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -722,6 +728,7 @@
 				8F57028D1F3AA4AE0047A5D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
