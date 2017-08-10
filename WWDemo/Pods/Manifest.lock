@@ -1,12 +1,18 @@
 PODS:
   - CYLTabBarController (1.13.1)
+  - MBProgressHUD (1.0.0)
+  - Toast (3.1.0)
 
 DEPENDENCIES:
   - CYLTabBarController (~> 1.13.1)
+  - MBProgressHUD (~> 1.0.0)
+  - Toast (~> 3.1.0)
 
 SPEC CHECKSUMS:
   CYLTabBarController: 97f6b486f9e6c613d69e9c111cc9c2c5db7000ce
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
 
-PODFILE CHECKSUM: 37666f189f405a3689da41f6513feb1de1f5b215
+PODFILE CHECKSUM: 78bdcc0dfb6eef98bd73294b49f1c06dfe60504f
 
 COCOAPODS: 1.1.1
