@@ -14,6 +14,7 @@
 
 ##		说明
 * 虽然用了CYLTabBarController 又想试试UISplitViewController
-* 参考内容：[文档](https://developer.apple.com/documentation/uikit/uisplitviewcontroller?language=objc) &nbsp;[NSHispter](http://nshipster.cn/uisplitviewcontroller/) &nbsp; [当天真遇到现实](http://www.cnblogs.com/XYQ-208910/p/4897925.html)
+    * 参考内容：[文档](https://developer.apple.com/documentation/uikit/uisplitviewcontroller?language=objc) &nbsp;[NSHispter](http://nshipster.cn/uisplitviewcontroller/) &nbsp; [当天真遇到现实](http://www.cnblogs.com/XYQ-208910/p/4897925.html)
+    * 简单做了splitViewController 根据属性和代理方法做更多操作
 
 

@@ -22,18 +22,79 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.splitViewController = [UISplitViewController new];
-    WWMainViewController *mainVc = [WWMainViewController new];
+    WWMainViewController *masterVc = [WWMainViewController new];
     WWDetailViewController *detailVc = [WWDetailViewController new];
-    UINavigationController *mainNavC = [[UINavigationController alloc]initWithRootViewController:mainVc];
+    UINavigationController *masterNavC = [[UINavigationController alloc]initWithRootViewController:masterVc];
     UINavigationController *detailNavC = [[UINavigationController alloc]initWithRootViewController:detailVc];
-    self.splitViewController.viewControllers = @[mainNavC,detailNavC];
+    
+    masterVc.navigationItem.title = @"Master";
+    UIBarButtonItem *barBtnItem = [[UIBarButtonItem alloc]initWithTitle:@"Master" style:UIBarButtonItemStyleDone target:self action:@selector(showMaster)];
+    detailVc.navigationItem.leftBarButtonItem = barBtnItem;
+//    detailVc.navigationItem.leftBarButtonItem.title = @"Master";
+    
+    self.splitViewController.viewControllers = @[masterNavC,detailNavC];
     self.splitViewController.delegate = self;
+    
+    //当需要设置splitViewController的Master的宽度比较大的时候 上边的代码是必须的
+    self.splitViewController.maximumPrimaryColumnWidth = MAXFLOAT;
+    //当需要改变splitViewController的Master和Detail的视图的宽度的时候 需要下列属性 按照一个比例来设置
+    self.splitViewController.preferredPrimaryColumnWidthFraction = 0.2;
+    
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = self.splitViewController;
     [self.window makeKeyAndVisible];
-    [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+#pragma mark -<UISplitViewController>
+//主控制器将要隐藏时触发的方法
+-(void)splitViewController:(UISplitViewController *)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)pc
+{
+    barButtonItem.title = @"Master";
+    //master将要隐藏时，给detail设置一个返回按钮
+    UINavigationController *Nav = [self.splitViewController.viewControllers lastObject];
+    WWDetailViewController *detailVc = (WWDetailViewController *)[Nav topViewController];
+    
+    detailVc.navigationItem.leftBarButtonItem = barButtonItem;
+}
+
+- (void)splitViewController:(UISplitViewController *)svc willChangeToDisplayMode:(UISplitViewControllerDisplayMode)displayMode NS_AVAILABLE_IOS(8_0){
+    
+    //上边的方法废弃了用这个
+    //其实现在不需要这个方法的 只需要使用手势就可以展示出来Master
+    UINavigationController *nav = [self.splitViewController.viewControllers lastObject];
+    WWDetailViewController *detailVc = (WWDetailViewController *)[nav topViewController];
+    UIBarButtonItem *barBtnItem = [[UIBarButtonItem alloc]initWithTitle:@"Master" style:UIBarButtonItemStylePlain target:self action:@selector(showMaster)];
+    detailVc.navigationItem.leftBarButtonItem = barBtnItem;
+    //直接写不行 可能是因为要给相应的barButtonItem需要指定targetSelector的原因
+//    detailVc.navigationItem.leftBarButtonItem.title = @"Master";
+    
+    
+    
+}
+
+#pragma mark - 展示Master
+- (void)showMaster{
+    //展示出来Master 可以通过模仿手势来实现展示出来Master
+    
+}
+
+#pragma mark - 开始时取消二级控制器,只显示详细控制器
+- (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController
+{
+    return NO;
+}
+
+
+//主控制器将要显示时触发的方法
+-(void)splitViewController:(UISplitViewController *)sender willShowViewController:(UIViewController *)master invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+{
+    //master将要显示时,取消detail的返回按钮
+    UINavigationController *Nav = [self.splitViewController.viewControllers lastObject];
+    WWDetailViewController *detailVc = (WWDetailViewController *)[Nav topViewController];
+    
+    detailVc.navigationItem.leftBarButtonItem = nil;
 }
 
 
