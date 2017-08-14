@@ -20,7 +20,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+//    return YES;
     self.splitViewController = [UISplitViewController new];
     WWMainViewController *masterVc = [WWMainViewController new];
     WWDetailViewController *detailVc = [WWDetailViewController new];
@@ -31,6 +31,10 @@
     UIBarButtonItem *barBtnItem = [[UIBarButtonItem alloc]initWithTitle:@"Master" style:UIBarButtonItemStyleDone target:self action:@selector(showMaster)];
     detailVc.navigationItem.leftBarButtonItem = barBtnItem;
 //    detailVc.navigationItem.leftBarButtonItem.title = @"Master";
+    
+    //隐藏导航栏
+    masterNavC.navigationBar.hidden = YES;
+    detailNavC.navigationBar.hidden = YES;
     
     self.splitViewController.viewControllers = @[masterNavC,detailNavC];
     self.splitViewController.delegate = self;
