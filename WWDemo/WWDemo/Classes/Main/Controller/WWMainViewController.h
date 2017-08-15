@@ -10,4 +10,10 @@
 
 @interface WWMainViewController : UIViewController
 
+
+/**
+ 菜单tableView
+ */
+@property(nonatomic,strong) UITableView *menuTableView;
+
 @end

@@ -10,6 +10,9 @@
 #import "WWMainViewController.h"
 #import "WWDetailViewController.h"
 
+//Master占总的屏幕的宽度的比例系数
+static const double kMasterColumnWidthFraction = 0.2;
+
 @interface AppDelegate ()<UISplitViewControllerDelegate>
 
 @property (nonatomic,strong) UISplitViewController *splitViewController;
@@ -35,6 +38,8 @@
     //隐藏导航栏
     masterNavC.navigationBar.hidden = YES;
     detailNavC.navigationBar.hidden = YES;
+    //全局隐藏状态栏
+    [UIApplication sharedApplication].statusBarHidden = YES;
     
     self.splitViewController.viewControllers = @[masterNavC,detailNavC];
     self.splitViewController.delegate = self;
@@ -42,7 +47,7 @@
     //当需要设置splitViewController的Master的宽度比较大的时候 上边的代码是必须的
     self.splitViewController.maximumPrimaryColumnWidth = MAXFLOAT;
     //当需要改变splitViewController的Master和Detail的视图的宽度的时候 需要下列属性 按照一个比例来设置
-    self.splitViewController.preferredPrimaryColumnWidthFraction = 0.2;
+    self.splitViewController.preferredPrimaryColumnWidthFraction = kMasterColumnWidthFraction;
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = self.splitViewController;
