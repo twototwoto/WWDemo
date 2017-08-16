@@ -15,5 +15,6 @@
  菜单tableView
  */
 @property(nonatomic,strong) UITableView *menuTableView;
+@property(nonatomic,strong) NSMutableDictionary *detailVcCacheDictM;
 
 @end

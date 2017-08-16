@@ -7,7 +7,20 @@
 //
 
 #import "WWMainViewController.h"
+
+#import "WWMainPageViewController.h"
+#import "WWDetailPageViewController.h"
+#import "WWDiscoverPageViewController.h"
+#import "WWMinePageViewController.h"
+
 #import "WWMenuTableViewCell.h"
+
+typedef NS_ENUM(NSUInteger,ViewControllerType){
+    ViewControllerTypeMain,
+    ViewControllerTypeDetail,
+    ViewControllerTypeDiscover,
+    ViewControllerTypeMine
+};
 
 //指定菜单的item的个数
 static const NSInteger kMenuItemsCount = 4;
@@ -22,6 +35,10 @@ static NSString *kMenuTableViewCellReuseIdentifierStr = @"kMenuTableViewCellReus
     NSArray<NSString *> *_menuLabelStrArr;
     NSArray<NSString *> *_menuNormalImageStrArr;
     NSArray<NSString *> *_menuSelectedImageStrArr;
+    //记录上次选中的行
+    NSInteger _selectedRow;
+    //主视图的名称数组
+    NSArray<NSString *> *_detailViewControllerArr;
 }
 
 
@@ -36,6 +53,25 @@ static NSString *kMenuTableViewCellReuseIdentifierStr = @"kMenuTableViewCellReus
     _menuLabelStrArr = @[@"首页",@"详情",@"发现",@"我的"];
     _menuNormalImageStrArr = @[@"main",@"book",@"discover",@"mine"];
     _menuSelectedImageStrArr = @[@"main_Sel",@"book_Sel",@"discover_Sel",@"mine_Sel"];
+    _detailViewControllerArr = @[@"WWMainPageViewController",@"WWDetailPageViewController",@"WWDiscoverPageViewController",@"WWMinePageViewController"];
+    
+    _selectedRow = 1;
+}
+
+
+#pragma mark - 展示出来详情控制器
+- (void)showViewControllerWithSelectedCell:(NSInteger)selectedIndex{
+    
+    UIViewController *detailVc = [self.detailVcCacheDictM valueForKey:_menuLabelStrArr[selectedIndex]];
+    if (detailVc) {
+        [self.splitViewController showDetailViewController:detailVc sender:nil];
+    }else{
+        detailVc = [NSClassFromString(_detailViewControllerArr[selectedIndex]) new];
+        //控制器缓存
+        [self.detailVcCacheDictM setObject:detailVc forKey:_menuLabelStrArr[selectedIndex]];
+    }
+    [self.splitViewController showDetailViewController:detailVc sender:nil];
+
 }
 
 #pragma mark - 处理UI
@@ -43,12 +79,15 @@ static NSString *kMenuTableViewCellReuseIdentifierStr = @"kMenuTableViewCellReus
     
     self.view.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:self.menuTableView];
+    //设置cell的行高
     self.menuTableView.rowHeight = SCREEN_HEIGHT / kMenuItemsCount ;
 //    self.menuTableView.estimatedRowHeight = SCREEN_HEIGHT * 0.25
     
     //默认选中第一个cell的操作
     [self.menuTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
     [self.menuTableView.delegate tableView:self.menuTableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    
+    
     
 
     
@@ -74,6 +113,10 @@ static NSString *kMenuTableViewCellReuseIdentifierStr = @"kMenuTableViewCellReus
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    if (_selectedRow == indexPath.row) {
+        return;
+    }
+    _selectedRow = indexPath.row;
     //对所有的cell进行重置操作
     for (NSInteger i = 0; i < kMenuItemsCount; i ++) {
         WWMenuTableViewCell *cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
@@ -90,6 +133,16 @@ static NSString *kMenuTableViewCellReuseIdentifierStr = @"kMenuTableViewCellReus
     cell.backgroundColor = [UIColor purpleColor];
     cell.menuItemLabel.textColor = [UIColor whiteColor];
     
+    [self showViewControllerWithSelectedCell:indexPath.row];
+
+//    if (indexPath.row % 2) {
+//        [self.splitViewController showViewController:[WWDetailPageViewController new] sender:nil];
+//        
+//    }else{
+//    
+//        [self.splitViewController showViewController:[WWMainPageViewController new] sender:nil];
+//    }
+    
     
 }
 
@@ -105,12 +158,19 @@ static NSString *kMenuTableViewCellReuseIdentifierStr = @"kMenuTableViewCellReus
         _menuTableView.dataSource = self;
         [_menuTableView registerClass:[WWMenuTableViewCell class] forCellReuseIdentifier:kMenuTableViewCellReuseIdentifierStr];
         //去除cell的分割样式
-        _menuTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//        _menuTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _menuTableView.bounces = NO;
 //        _menuTableView.allowsSelection = NO;
     }
     return _menuTableView;
     
+}
+
+- (NSMutableDictionary *)detailVcCacheDictM{
+    if (!_detailVcCacheDictM) {
+        _detailVcCacheDictM = [NSMutableDictionary dictionary];
+    }
+    return _detailVcCacheDictM;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -19,6 +19,11 @@
 		8F57026B1F3AA4AE0047A5D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F5702691F3AA4AE0047A5D5 /* LaunchScreen.storyboard */; };
 		8F5702761F3AA4AE0047A5D5 /* WWDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5702751F3AA4AE0047A5D5 /* WWDemoTests.m */; };
 		8F5702811F3AA4AE0047A5D5 /* WWDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5702801F3AA4AE0047A5D5 /* WWDemoUITests.m */; };
+		8F5BA7211F42F3340026AE07 /* WWEpubKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5BA7201F42F3340026AE07 /* WWEpubKit.m */; };
+		8F6E74BD1F442D58003E8BD3 /* WWMainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E74BC1F442D58003E8BD3 /* WWMainPageViewController.m */; };
+		8F6E74C01F442DEF003E8BD3 /* WWDetailPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E74BF1F442DEF003E8BD3 /* WWDetailPageViewController.m */; };
+		8F6E74C31F443E36003E8BD3 /* WWDiscoverPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E74C21F443E36003E8BD3 /* WWDiscoverPageViewController.m */; };
+		8F6E74C91F443E70003E8BD3 /* WWMinePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E74C81F443E70003E8BD3 /* WWMinePageViewController.m */; };
 		8F81DE591F41891600131D05 /* WWMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F81DE581F41891600131D05 /* WWMenuTableViewCell.m */; };
 		9A9F4C5A9AF0C34FC1B03C8C /* libPods-WWDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B2E3D2DA0182B9D50D9ADA /* libPods-WWDemoUITests.a */; };
 		F2441D108610492C1B86E26B /* libPods-WWDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A19AC05371528B14E40F869 /* libPods-WWDemo.a */; };
@@ -75,6 +80,16 @@
 		8F5702801F3AA4AE0047A5D5 /* WWDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WWDemoUITests.m; sourceTree = "<group>"; };
 		8F5702821F3AA4AE0047A5D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F57028E1F3AFC050047A5D5 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		8F5BA71F1F42F3340026AE07 /* WWEpubKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWEpubKit.h; sourceTree = "<group>"; };
+		8F5BA7201F42F3340026AE07 /* WWEpubKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWEpubKit.m; sourceTree = "<group>"; };
+		8F6E74BB1F442D58003E8BD3 /* WWMainPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWMainPageViewController.h; sourceTree = "<group>"; };
+		8F6E74BC1F442D58003E8BD3 /* WWMainPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWMainPageViewController.m; sourceTree = "<group>"; };
+		8F6E74BE1F442DEF003E8BD3 /* WWDetailPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWDetailPageViewController.h; sourceTree = "<group>"; };
+		8F6E74BF1F442DEF003E8BD3 /* WWDetailPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWDetailPageViewController.m; sourceTree = "<group>"; };
+		8F6E74C11F443E36003E8BD3 /* WWDiscoverPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWDiscoverPageViewController.h; sourceTree = "<group>"; };
+		8F6E74C21F443E36003E8BD3 /* WWDiscoverPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWDiscoverPageViewController.m; sourceTree = "<group>"; };
+		8F6E74C71F443E70003E8BD3 /* WWMinePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWMinePageViewController.h; sourceTree = "<group>"; };
+		8F6E74C81F443E70003E8BD3 /* WWMinePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWMinePageViewController.m; sourceTree = "<group>"; };
 		8F81DE571F41891600131D05 /* WWMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWMenuTableViewCell.h; sourceTree = "<group>"; };
 		8F81DE581F41891600131D05 /* WWMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWMenuTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,6 +135,10 @@
 		8F4C26711F3BFD200070D75A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8F6E74B31F442CFA003E8BD3 /* MainPage */,
+				8F6E74AB1F442CF9003E8BD3 /* DetailPage */,
+				8F6E74AF1F442CFA003E8BD3 /* DiscoverPage */,
+				8F6E74B71F442CFA003E8BD3 /* MinePage */,
 				8F81DE531F4182B200131D05 /* Menu */,
 				8F4C26721F3BFD200070D75A /* Detail */,
 				8F4C26731F3BFD200070D75A /* Main */,
@@ -219,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				8F4C26711F3BFD200070D75A /* Classes */,
+				8F5BA71D1F42F3120026AE07 /* Tools */,
 				8F57025B1F3AA4AE0047A5D5 /* AppDelegate.h */,
 				8F57025C1F3AA4AE0047A5D5 /* AppDelegate.m */,
 				8F57025E1F3AA4AE0047A5D5 /* ViewController.h */,
@@ -260,6 +280,155 @@
 				8F5702821F3AA4AE0047A5D5 /* Info.plist */,
 			);
 			path = WWDemoUITests;
+			sourceTree = "<group>";
+		};
+		8F5BA71D1F42F3120026AE07 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				8F5BA71E1F42F3120026AE07 /* WWEpubKit */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		8F5BA71E1F42F3120026AE07 /* WWEpubKit */ = {
+			isa = PBXGroup;
+			children = (
+				8F5BA71F1F42F3340026AE07 /* WWEpubKit.h */,
+				8F5BA7201F42F3340026AE07 /* WWEpubKit.m */,
+			);
+			path = WWEpubKit;
+			sourceTree = "<group>";
+		};
+		8F6E74AB1F442CF9003E8BD3 /* DetailPage */ = {
+			isa = PBXGroup;
+			children = (
+				8F6E74AC1F442CFA003E8BD3 /* Controller */,
+				8F6E74AD1F442CFA003E8BD3 /* Model */,
+				8F6E74AE1F442CFA003E8BD3 /* View */,
+			);
+			path = DetailPage;
+			sourceTree = "<group>";
+		};
+		8F6E74AC1F442CFA003E8BD3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8F6E74BE1F442DEF003E8BD3 /* WWDetailPageViewController.h */,
+				8F6E74BF1F442DEF003E8BD3 /* WWDetailPageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8F6E74AD1F442CFA003E8BD3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8F6E74AE1F442CFA003E8BD3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8F6E74AF1F442CFA003E8BD3 /* DiscoverPage */ = {
+			isa = PBXGroup;
+			children = (
+				8F6E74B01F442CFA003E8BD3 /* Controller */,
+				8F6E74B11F442CFA003E8BD3 /* Model */,
+				8F6E74B21F442CFA003E8BD3 /* View */,
+			);
+			path = DiscoverPage;
+			sourceTree = "<group>";
+		};
+		8F6E74B01F442CFA003E8BD3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8F6E74C11F443E36003E8BD3 /* WWDiscoverPageViewController.h */,
+				8F6E74C21F443E36003E8BD3 /* WWDiscoverPageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8F6E74B11F442CFA003E8BD3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8F6E74B21F442CFA003E8BD3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8F6E74B31F442CFA003E8BD3 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				8F6E74B41F442CFA003E8BD3 /* Controller */,
+				8F6E74B51F442CFA003E8BD3 /* Model */,
+				8F6E74B61F442CFA003E8BD3 /* View */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		8F6E74B41F442CFA003E8BD3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8F6E74BB1F442D58003E8BD3 /* WWMainPageViewController.h */,
+				8F6E74BC1F442D58003E8BD3 /* WWMainPageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8F6E74B51F442CFA003E8BD3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8F6E74B61F442CFA003E8BD3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8F6E74B71F442CFA003E8BD3 /* MinePage */ = {
+			isa = PBXGroup;
+			children = (
+				8F6E74B81F442CFA003E8BD3 /* Controller */,
+				8F6E74B91F442CFA003E8BD3 /* Model */,
+				8F6E74BA1F442CFA003E8BD3 /* View */,
+			);
+			path = MinePage;
+			sourceTree = "<group>";
+		};
+		8F6E74B81F442CFA003E8BD3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8F6E74C71F443E70003E8BD3 /* WWMinePageViewController.h */,
+				8F6E74C81F443E70003E8BD3 /* WWMinePageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8F6E74B91F442CFA003E8BD3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8F6E74BA1F442CFA003E8BD3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		8F81DE531F4182B200131D05 /* Menu */ = {
@@ -597,10 +766,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F5702601F3AA4AE0047A5D5 /* ViewController.m in Sources */,
+				8F6E74C01F442DEF003E8BD3 /* WWDetailPageViewController.m in Sources */,
 				8F57025D1F3AA4AE0047A5D5 /* AppDelegate.m in Sources */,
+				8F5BA7211F42F3340026AE07 /* WWEpubKit.m in Sources */,
+				8F6E74C91F443E70003E8BD3 /* WWMinePageViewController.m in Sources */,
 				8F5702661F3AA4AE0047A5D5 /* WWDemo.xcdatamodeld in Sources */,
 				8F4C267F1F3BFDC80070D75A /* WWDetailViewController.m in Sources */,
+				8F6E74C31F443E36003E8BD3 /* WWDiscoverPageViewController.m in Sources */,
 				8F4C267C1F3BFD930070D75A /* WWMainViewController.m in Sources */,
+				8F6E74BD1F442D58003E8BD3 /* WWMainPageViewController.m in Sources */,
 				8F4C26811F3C05C10070D75A /* ReadMe.md in Sources */,
 				8F81DE591F41891600131D05 /* WWMenuTableViewCell.m in Sources */,
 				8F57025A1F3AA4AE0047A5D5 /* main.m in Sources */,
@@ -757,6 +931,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WWDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = WWDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ITCoderW.WWDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -770,6 +945,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WWDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = WWDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ITCoderW.WWDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
