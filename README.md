@@ -11,8 +11,22 @@
 * [appledoc生成技术文档](https://github.com/tomaz/appledoc/blob/master/Readme.markdown)
 * [觅图网址](http://www.iconfont.cn/home/index?spm=a313x.7781069.1998910419.1.2d672ab2kTlVeF)
 &nbsp;[图标工场](http://icon.wuruihong.com)
+* [Clion](https://www.jetbrains.com/help/clion/quick-start-guide.html)
 ---
+
 ##	ThirdLib
+* &nbsp;[FCUUID](https://github.com/fabiocaccamo/FCUUID)
 * &nbsp;[Toast](https://github.com/scalessec/Toast)
 &nbsp;[MBProgressHUD](https://github.com/jdg/MBProgressHUD)
 &nbsp;[SVProgressHUD](https://github.com/SVProgressHUD/SVProgressHUD)
+* &nbsp;[YLProgressBar](https://github.com/yannickl/YLProgressBar)
+* &nbsp;[Masonry](https://github.com/SnapKit/Masonry)
+* &nbsp;[AFNetworking](https://github.com/AFNetworking/AFNetworking)
+* &nbsp;[YY](https://github.com/ibireme)
+* &nbsp;[MJ](https://github.com/CoderMJLee)
+* &nbsp;[FolioReaderKit](https://github.com/FolioReader/FolioReaderKit) &nbsp;[Reader](https://github.com/GGGHub/Reader) &nbsp;[TReaderBook](https://github.com/12207480/TReaderBook) &nbsp;[ILPDFKit](https://github.com/derekblair/ILPDFKit)
+
+
+
+
+
