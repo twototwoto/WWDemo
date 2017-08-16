@@ -1,5 +1,6 @@
 # WWDemo
 # 一些日常的小demo(some daily demos)
+(如果对您有所帮助，希望您Star一下)
 ---
 1. **常用的文档**
 * [MarkDown使用帮助文档](http://commonmark.org/help/) 
@@ -11,6 +12,8 @@
 * [appledoc生成技术文档](https://github.com/tomaz/appledoc/blob/master/Readme.markdown)
 * [觅图网址](http://www.iconfont.cn/home/index?spm=a313x.7781069.1998910419.1.2d672ab2kTlVeF)
 &nbsp;[图标工场](http://icon.wuruihong.com)
+* [马克鳗(高效的设计稿标注、测量工具)](http://www.getmarkman.com/)
+* [Sketch](https://www.sketchapp.com/learn/documentation/getting-started/)
 * [Clion](https://www.jetbrains.com/help/clion/quick-start-guide.html)
 ---
 
