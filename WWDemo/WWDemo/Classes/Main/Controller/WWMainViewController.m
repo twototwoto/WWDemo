@@ -56,6 +56,31 @@ static NSString *kMenuTableViewCellReuseIdentifierStr = @"kMenuTableViewCellReus
     _detailViewControllerArr = @[@"WWMainPageViewController",@"WWDetailPageViewController",@"WWDiscoverPageViewController",@"WWMinePageViewController"];
     
     _selectedRow = 1;
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(orientationDidChanged:) name:UIDeviceOrientationDidChangeNotification object:nil];
+}
+
+#pragma mark - 更新master 即menu的约束
+- (void)updateMasterConstarintsWithPortrait:(BOOL)isPortrait{
+    
+    //FIXME: - FIXME: 这里在第一次切换屏幕的时候屏幕转换有问题
+    CGFloat width = isPortrait ? SCREEN_WIDTH * 0.1 : SCREEN_WIDTH * 0.2;
+    if (isPortrait) {
+        self.splitViewController.maximumPrimaryColumnWidth = width;
+    }else{
+        self.splitViewController.maximumPrimaryColumnWidth = width;
+    }
+    self.menuTableView.rowHeight = self.view.frame.size.height / kMenuItemsCount;
+    [self.menuTableView layoutIfNeeded];
+    
+}
+
+#pragma mark - 监听屏幕方向的改变
+- (void)orientationDidChanged:(NSNotification *)noti{
+    
+    BOOL isPortrait = UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation);
+    [self updateMasterConstarintsWithPortrait:isPortrait];
+    
 }
 
 
@@ -74,24 +99,28 @@ static NSString *kMenuTableViewCellReuseIdentifierStr = @"kMenuTableViewCellReus
 
 }
 
-#pragma mark - 处理UI
-- (void)setupUI{
-    
-    self.view.backgroundColor = [UIColor orangeColor];
+#pragma mark - 处理左侧菜单栏目视图
+- (void)setupMenuTableViewUI{
     [self.view addSubview:self.menuTableView];
+    [self.menuTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.right.bottom.equalTo(self.view);
+        //        make.width.mas_equalTo(SCREEN_WIDTH * 0.2);
+    }];
     //设置cell的行高
     self.menuTableView.rowHeight = SCREEN_HEIGHT / kMenuItemsCount ;
-//    self.menuTableView.estimatedRowHeight = SCREEN_HEIGHT * 0.25
+    //    self.menuTableView.estimatedRowHeight = SCREEN_HEIGHT * 0.25
     
     //默认选中第一个cell的操作
     [self.menuTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
     [self.menuTableView.delegate tableView:self.menuTableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    
-    
-    
 
+}
+
+#pragma mark - 处理UI
+- (void)setupUI{
     
-    
+    self.view.backgroundColor = [UIColor orangeColor];
+    [self setupMenuTableViewUI];
     
 }
 
@@ -145,7 +174,6 @@ static NSString *kMenuTableViewCellReuseIdentifierStr = @"kMenuTableViewCellReus
     
     
 }
-
 
 
 #pragma mark - 懒加载

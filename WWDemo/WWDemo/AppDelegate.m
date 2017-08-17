@@ -25,6 +25,8 @@ static const double kMasterColumnWidthFraction = 0.2;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 //    return YES;
     self.splitViewController = [UISplitViewController new];
+    //总是能够展示出来视图
+    self.splitViewController.preferredDisplayMode = UISplitViewControllerDisplayModeAllVisible;
     WWMainViewController *masterVc = [WWMainViewController new];
     WWDetailViewController *detailVc = [WWDetailViewController new];
     UINavigationController *masterNavC = [[UINavigationController alloc]initWithRootViewController:masterVc];
@@ -78,9 +80,6 @@ static const double kMasterColumnWidthFraction = 0.2;
     detailVc.navigationItem.leftBarButtonItem = barBtnItem;
     //直接写不行 可能是因为要给相应的barButtonItem需要指定targetSelector的原因
 //    detailVc.navigationItem.leftBarButtonItem.title = @"Master";
-    
-    
-    
 }
 
 #pragma mark - 展示Master

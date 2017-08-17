@@ -29,6 +29,7 @@
 - (void)setupMenuCellUI{
     
     CGFloat halfCellH = SCREEN_HEIGHT * 0.125;
+    
     self.backgroundColor = [UIColor orangeColor];
     //取消cell的选中的样式
     self.selectionStyle = UITableViewCellSelectionStyleNone;

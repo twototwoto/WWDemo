@@ -7,6 +7,8 @@
 //
 
 #import "WWMainPageViewController.h"
+#import "WWDetailPageViewController.h"
+#import "WWNavigationViewController.h"
 
 @interface WWMainPageViewController ()
 
@@ -18,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self prepareData];
     [self setupUI];
 }
 
@@ -25,6 +28,10 @@
 //    _label.center = self.view.center;
     
     WWLog(@"%f",self.view.frame.size.width);
+}
+
+- (void)prepareData{
+    self.splitViewController.delegate = self;
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -40,7 +47,9 @@
 }
 
 - (void)setupUI{
+    
     WWLog(@"%f",self.view.frame.size.width);
+    self.view.backgroundColor = [UIColor yellowColor];
     
     //MARK: - MARK: 一点关于使用SplitViewController的时候的视图的位置的问题
     /**
@@ -61,14 +70,38 @@
     WWLog(@"%@",NSStringFromCGRect(_label.frame));
     //    _label.center = self.view.center;
     WWLog(@"%f",self.view.frame.size.width);
-    self.view.backgroundColor = [UIColor yellowColor];
+    
     UISwitch *switchV = [UISwitch new];
     [self.view addSubview:switchV];
-    
     switchV.frame = CGRectMake(CGRectGetMidX(self.view.frame), CGRectGetMidY(self.view.frame), 100, 40);
-    switchV.frame = CGRectMake(0, 0, 100, 40);
+    switchV.frame = CGRectMake(0, 40, 100, 40);
+    
+    UIButton *btn = [UIButton new];
+    [btn setTitle:@"改变导航栏的高度和item的位置Click Me" forState:UIControlStateNormal];
+    btn.backgroundColor = [UIColor redColor];
+    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.view addSubview:btn];
+    btn.frame = CGRectMake(80, 40, 80, 40);
+    [btn sizeToFit];
+    [btn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
     
     
+    
+    
+    
+    
+}
+
+#pragma mark - 点击btn
+- (void)btnClick{
+    
+    WWDetailPageViewController *vc = [WWDetailPageViewController new];
+    WWNavigationViewController *nav = [[WWNavigationViewController alloc]initWithRootViewController:vc];
+    vc.view.backgroundColor = [UIColor whiteColor];
+    vc.view.frame = CGRectMake(SCREEN_WIDTH * 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+//    [self showViewController:nav sender:nil];
+    [self presentViewController:nav animated:YES completion:nil];
+
 }
 
 - (void)didReceiveMemoryWarning {

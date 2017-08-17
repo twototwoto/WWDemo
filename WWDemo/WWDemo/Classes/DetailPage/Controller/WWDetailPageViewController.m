@@ -7,6 +7,7 @@
 //
 
 #import "WWDetailPageViewController.h"
+//#import "UINavigationBar+WWAdd.h"
 
 @interface WWDetailPageViewController ()
 
@@ -38,12 +39,61 @@
     
     
 }
+#pragma mark - 点击navigationBar的leftBarItem
+- (void)leftBarButtonItemClick{
+    WWLog(@"leftBarButtonItem");
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+#pragma mark - 点击navigationBar的rightBarItem
+- (void)rightBarButtonItemClick{
+    UIViewController *vc = [UIViewController new];
+    vc.view.backgroundColor = [UIColor orangeColor];
+    //在这里的这种modal出来的控制器下就可以push了
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
+    [self.navigationController pushViewController:vc animated:YES];
+    WWLog(@"rightBarButtonItem");
+}
+#pragma mark - navigationBarUI
+- (void)setupNavigationBarUI{
+    self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
+    
+    
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarButtonItemClick)];
+    self.navigationItem.leftBarButtonItem = barButtonItem;
+    //改变返回的字体的颜色
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor blackColor];
+    
+    //    self.navigationItem.title = @"detail";
+    UILabel *navtitleLabel = [UILabel new];
+    navtitleLabel.text = @"Title";
+    navtitleLabel.frame = CGRectMake(0, 0, 80, 80);
+    self.navigationItem.titleView = navtitleLabel;
+    
+    UIButton *rightBarButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 80, 80)];
+    [rightBarButton setImage:[UIImage imageNamed:@"more"] forState:UIControlStateNormal];
+    
+    //如果有必要改变渲染模式
+    //    rightBarButton.imageView.image = [rightBarButton.imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    rightBarButton.backgroundColor = [UIColor orangeColor];
+    [rightBarButton addTarget:self action:@selector(rightBarButtonItemClick) forControlEvents:UIControlEventTouchUpInside];
+    rightBarButton.contentMode = UIViewContentModeScaleToFill;
+    
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:rightBarButton];
+
+}
 - (void)setupUI{
     self.view.backgroundColor = [UIColor blueColor];
+    [self setupNavigationBarUI];
     [self testBtnPosition];
+    
     UILabel *label = [[UILabel alloc]initWithFrame:self.view.bounds];
+    label.frame = CGRectMake(100, 100, 100, 100);
+    label.backgroundColor = [UIColor yellowColor];
     [self.view addSubview:label];
     label.text = @"DetailPage";
+    
     
     
     
