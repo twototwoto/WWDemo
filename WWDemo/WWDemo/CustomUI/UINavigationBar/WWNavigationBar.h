@@ -10,4 +10,5 @@
 
 @interface WWNavigationBar : UINavigationBar
 @property (nonatomic, strong) CALayer *colorLayer;
+//- (void)setNavigationBarStyle;
 @end

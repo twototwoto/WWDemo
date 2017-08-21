@@ -21,6 +21,7 @@
 
 - (void)setupUI{
     self.view.backgroundColor = [UIColor redColor];
+    
 }
 
 - (void)didReceiveMemoryWarning {

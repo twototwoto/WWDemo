@@ -25,12 +25,15 @@ static const double kMasterColumnWidthFraction = 0.2;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 //    return YES;
     self.splitViewController = [UISplitViewController new];
-    //总是能够展示出来视图
-    self.splitViewController.preferredDisplayMode = UISplitViewControllerDisplayModeAllVisible;
     WWMainViewController *masterVc = [WWMainViewController new];
     WWDetailViewController *detailVc = [WWDetailViewController new];
     UINavigationController *masterNavC = [[UINavigationController alloc]initWithRootViewController:masterVc];
     UINavigationController *detailNavC = [[UINavigationController alloc]initWithRootViewController:detailVc];
+    /*  在下一行代码之前不要对splitViewController设置任何属性 否则的话可能报警告 警告如下:2017-08-21 11:26:59.657028+0800 WWDemo[3868:112940] [Warning] Splitview controller <UISplitViewControllerClassicImpl: 0x7fc715305130> is expected to have a view controller at index 0 before it's used!
+     */
+    self.splitViewController.viewControllers = @[masterNavC,detailNavC];
+    //总是能够展示出来视图
+    self.splitViewController.preferredDisplayMode = UISplitViewControllerDisplayModeAllVisible;
     
     masterVc.navigationItem.title = @"Master";
     UIBarButtonItem *barBtnItem = [[UIBarButtonItem alloc]initWithTitle:@"Master" style:UIBarButtonItemStyleDone target:self action:@selector(showMaster)];
@@ -43,7 +46,7 @@ static const double kMasterColumnWidthFraction = 0.2;
     //全局隐藏状态栏
     [UIApplication sharedApplication].statusBarHidden = YES;
     
-    self.splitViewController.viewControllers = @[masterNavC,detailNavC];
+//    self.splitViewController.viewControllers = @[masterNavC,detailNavC];
     self.splitViewController.delegate = self;
     
     //当需要设置splitViewController的Master的宽度比较大的时候 上边的代码是必须的

@@ -24,6 +24,7 @@
 		8F6E74C01F442DEF003E8BD3 /* WWDetailPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E74BF1F442DEF003E8BD3 /* WWDetailPageViewController.m */; };
 		8F6E74C31F443E36003E8BD3 /* WWDiscoverPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E74C21F443E36003E8BD3 /* WWDiscoverPageViewController.m */; };
 		8F6E74C91F443E70003E8BD3 /* WWMinePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E74C81F443E70003E8BD3 /* WWMinePageViewController.m */; };
+		8F78E7C21F46E23800167878 /* WWLockCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F78E7C11F46E23800167878 /* WWLockCollectionViewCell.m */; };
 		8F7D1ECE1F45527D00487DDA /* UINavigationBar+WWAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7D1ECD1F45527D00487DDA /* UINavigationBar+WWAdd.m */; };
 		8F7D1ED11F45969700487DDA /* WWNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7D1ED01F45969700487DDA /* WWNavigationBar.m */; };
 		8F7D1ED41F45974700487DDA /* WWNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7D1ED31F45974700487DDA /* WWNavigationViewController.m */; };
@@ -93,6 +94,8 @@
 		8F6E74C21F443E36003E8BD3 /* WWDiscoverPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWDiscoverPageViewController.m; sourceTree = "<group>"; };
 		8F6E74C71F443E70003E8BD3 /* WWMinePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWMinePageViewController.h; sourceTree = "<group>"; };
 		8F6E74C81F443E70003E8BD3 /* WWMinePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWMinePageViewController.m; sourceTree = "<group>"; };
+		8F78E7C01F46E23800167878 /* WWLockCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWLockCollectionViewCell.h; sourceTree = "<group>"; };
+		8F78E7C11F46E23800167878 /* WWLockCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWLockCollectionViewCell.m; sourceTree = "<group>"; };
 		8F7D1ECC1F45527D00487DDA /* UINavigationBar+WWAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+WWAdd.h"; sourceTree = "<group>"; };
 		8F7D1ECD1F45527D00487DDA /* UINavigationBar+WWAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+WWAdd.m"; sourceTree = "<group>"; };
 		8F7D1ECF1F45969700487DDA /* WWNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWNavigationBar.h; sourceTree = "<group>"; };
@@ -404,6 +407,8 @@
 		8F6E74B61F442CFA003E8BD3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8F78E7C01F46E23800167878 /* WWLockCollectionViewCell.h */,
+				8F78E7C11F46E23800167878 /* WWLockCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -592,6 +597,7 @@
 				TargetAttributes = {
 					8F5702541F3AA4AE0047A5D5 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = NZW5J9AJS6;
 						ProvisioningStyle = Automatic;
 					};
 					8F5702701F3AA4AE0047A5D5 = {
@@ -810,6 +816,7 @@
 				8F4C267C1F3BFD930070D75A /* WWMainViewController.m in Sources */,
 				8F6E74BD1F442D58003E8BD3 /* WWMainPageViewController.m in Sources */,
 				8F4C26811F3C05C10070D75A /* ReadMe.md in Sources */,
+				8F78E7C21F46E23800167878 /* WWLockCollectionViewCell.m in Sources */,
 				8F81DE591F41891600131D05 /* WWMenuTableViewCell.m in Sources */,
 				8F57025A1F3AA4AE0047A5D5 /* main.m in Sources */,
 			);
@@ -963,6 +970,7 @@
 			baseConfigurationReference = 6DBED537A4D7FFB829EDBEE4 /* Pods-WWDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NZW5J9AJS6;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WWDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = WWDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
@@ -977,6 +985,7 @@
 			baseConfigurationReference = 48A4E2122213D8F82D0B5152 /* Pods-WWDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NZW5J9AJS6;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WWDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = WWDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;

@@ -8,6 +8,7 @@
 
 #import "WWDetailPageViewController.h"
 //#import "UINavigationBar+WWAdd.h"
+//#import "WWNavigationBar.h"
 
 @interface WWDetailPageViewController ()
 
@@ -56,8 +57,10 @@
 }
 #pragma mark - navigationBarUI
 - (void)setupNavigationBarUI{
-    self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
-    
+    self.navigationController.navigationBar.barTintColor = [UIColor purpleColor];
+    //如果是需要渐变的话就做下一行代码的处理 还需要更多的内部的代码的修改才可以
+//    [(WWNavigationBar *)self.navigationController.navigationBar setNavigationBarStyle];
+//    [self.navigationController.navigationBar setNavigationBarStyle];
     
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarButtonItemClick)];
     self.navigationItem.leftBarButtonItem = barButtonItem;
@@ -85,6 +88,7 @@
 }
 - (void)setupUI{
     self.view.backgroundColor = [UIColor blueColor];
+    
     [self setupNavigationBarUI];
     [self testBtnPosition];
     

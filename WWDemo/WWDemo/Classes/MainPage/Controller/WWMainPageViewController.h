@@ -10,4 +10,6 @@
 
 @interface WWMainPageViewController : UIViewController
 
+@property(nonatomic,strong) UICollectionView *gateCollectionView;
+
 @end

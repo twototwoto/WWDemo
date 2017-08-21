@@ -10,4 +10,7 @@
 
 @interface UINavigationBar (WWAdd)
 
+//@property(nonatomic,assign) CGSize previousSize;
+//@property (nonatomic,copy) NSString *flagStr;
+//- (void)setNavigationBarStyle;
 @end
